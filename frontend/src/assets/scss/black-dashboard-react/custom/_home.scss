@@ -1,0 +1,101 @@
+.home {
+  &__wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__main-layout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 2rem;
+    place-items: center;
+    &--right {
+      padding-right: 1rem;
+      h1 {
+        font-size: 3.5rem;
+        color: #f2f2f2;
+      }
+      p {
+        font-size: 1.2rem;
+        color: #fdf2f2;
+      }
+    }
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &--button {
+      border: none;
+      outline: none !important;
+      padding: 2rem;
+      margin: 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s;
+      &:nth-child(1) {
+        background-color: #5a78f0;
+      }
+      &:nth-child(2) {
+        background-color: #05c0a5;
+      }
+      h3,
+      h4 {
+        margin-top: 2rem;
+        margin-bottom: 0px;
+      }
+
+      &-container {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 24px rgba(0, 0, 0, 15%);
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    &--about{
+        h3{
+            font-size: 2rem;
+            color: #fff !important;
+        }
+
+    }
+    &--img {
+      background-image: url("https://www.myetherwallet.com/img/stars.3cbb3e11.svg");
+      background-position: center center;
+      background-repeat: repeat;
+      background-size: 160%;
+      &-svg{
+          animation: animation1 2s infinite;
+      }
+    }
+  }
+}
+
+
+@keyframes animation1{
+    0%{
+        transform: scale(1) translate(0px);
+    }
+
+    20%{
+        transform: scale(1.2) translate(-30px);
+    }
+
+    80%{
+        transform: scale(1.2) translate(0px);
+    }
+
+    100%{
+        transform:  translate(0px);
+    }
+}

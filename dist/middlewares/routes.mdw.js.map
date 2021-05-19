@@ -1,0 +1,1 @@
+{"version":3,"file":"routes.mdw.js","sourceRoot":"","sources":["../../middlewares/routes.mdw.ts"],"names":[],"mappings":";;;;;AAAA,6FAAoE;AACpE,iFAAwD;AAExD,mBAAyB,GAAG;IAC1B,GAAG,CAAC,GAAG,CAAC,aAAa,EAAE,0BAAe,CAAC,CAAC;IACxC,GAAG,CAAC,GAAG,CAAC,SAAS,EAAE,sBAAW,CAAC,CAAC;AAClC,CAAC;AAHD,4BAGC"}

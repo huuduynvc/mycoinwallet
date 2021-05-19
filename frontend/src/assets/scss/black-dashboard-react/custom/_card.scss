@@ -1,0 +1,348 @@
+.card{
+    background: $card-black-background;
+    border: 0;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: $box-shadow;
+
+
+    label{
+      color: rgba($white, 0.6);
+    }
+
+    .card-title {
+      margin-bottom: .75rem;
+    }
+
+    .card-body{
+      padding: 15px;
+
+      &.table-full-width{
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .card-title{
+        color: $white;
+        text-transform: inherit;
+        font-weight: $font-weight-light;
+        margin-bottom: .75rem;
+      }
+
+      .card-description, .card-category{
+        color: rgba($white, 0.6);
+      }
+
+    }
+
+    .card-header{
+      &:not([data-background-color]){
+        background-color: transparent;
+      }
+      padding: 15px 15px 0;
+      border: 0;
+      color: rgba($white,0.8);
+
+      .card-title{
+          color: $white;
+          font-weight: 100;
+      }
+
+      .card-category{
+        color: $dark-gray;
+        margin-bottom: 5px;
+        font-weight: 300;
+      }
+    }
+
+    .map{
+        border-radius: $border-radius-sm;
+
+        &.map-big{
+          height: 420px;
+        }
+    }
+
+    &.card-white{
+      background: $white;
+
+      .card-title{
+        color: $black;
+      }
+      .card-category, .stats{
+        color: $card-stats-gray;
+      }
+
+      //style for inputs
+
+      @include form-control-placeholder(rgba($black,0.4), 1);
+        .has-danger{
+          .form-control, .input-group-prepend .input-group-text{
+            border-color: $danger-states;
+          }
+        }
+
+        .input-group-prepend .input-group-text{
+          border-color: rgba($black-states,0.2);
+          color: $black-states;
+        }
+
+        .form-control{
+          color: $black;
+          border-color: rgba($black-states,0.2);
+          &:focus{
+            border-color: $primary;
+          }
+        }
+        label:not(.btn){
+          color: $default;
+        }
+
+      .form-group.no-border,
+      .input-group.no-border {
+          .form-control,
+          .form-control + .input-group-prepend .input-group-text,
+          .form-control + .input-group-append .input-group-text,
+          .input-group-prepend .input-group-text,
+          .input-group-append .input-group-text{
+            background-color: $opacity-gray-3;
+              &:focus,
+              &:active,
+              &:active{
+                background-color: $opacity-gray-5;
+              }
+          }
+
+          .form-control {
+              &:focus {
+                  & + .input-group-prepend .input-group-text,
+                  & + .input-group-append .input-group-text{
+                    background-color: $transparent-bg;
+                  }
+              }
+          }
+
+
+      }
+
+      .input-group[disabled]{
+          .input-group-prepend .input-group-text,
+          .input-group-append .input-group-text{
+              background-color: $black;
+          }
+      }
+
+      .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+        background: $light-gray;
+        border-color: rgba($black-states,0.3);
+      }
+
+      .input-group-focus{
+          .input-group-prepend .input-group-text,
+          .input-group-append .input-group-text,
+          .form-control{
+            background-color: $white;
+            border-color: $primary;
+          }
+
+          &.no-border{
+              .input-group-prepend .input-group-text,
+              .input-group-append .input-group-text{
+
+                  background-color: $opacity-gray-5;
+              }
+          }
+      }
+      .input-group-prepend .input-group-text {
+          border-right: none;
+      }
+
+      .input-group-append .input-group-text {
+          border-left: none;
+      }
+
+      .has-danger .form-control:focus, .has-success.input-group-focus .input-group-append .input-group-text, .has-success.input-group-focus .input-group-prepend .input-group-text {
+        border-color: $danger-states;
+      }
+
+      .has-success .form-control:focus, .has-success.input-group-focus .input-group-append .input-group-text, .has-success.input-group-focus .input-group-prepend .input-group-text {
+        border-color: darken($success, 10%);
+      }
+    }
+
+
+    &.card-plain {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .image{
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+    }
+
+    .avatar{
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+
+    label{
+        font-size: $font-size-sm;
+        margin-bottom: 5px;
+
+    }
+
+    .card-footer{
+        background-color: transparent;
+        border: 0;
+        padding: 15px;
+
+
+        .stats{
+            i{
+                margin-right: 5px;
+                position: relative;
+
+            }
+        }
+
+        h6{
+          margin-bottom: 0;
+          padding: 7px 0;
+        }
+    }
+}
+
+.card-body{
+  padding: $card-spacer-y;
+}
+
+@include media-breakpoint-down(sm) {
+  .card.card-chart .card-header {
+    .btn-group-toggle .tim-icons {
+      font-size: .875rem;
+      top: -1px;
+    }
+  }
+}
+
+
+.cardmain{
+  &__wrapper{
+    background-color: #7070e3;
+    width: 350px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    border-radius: 5px;
+  }
+  &__avatar{
+    width: 60px;
+    height: 60px;
+    border: 5px solid white;
+    border-radius: 50%;
+    &--img{
+      border-radius: 50%;
+    }
+  }
+
+  &__content{
+    h3{
+        margin-bottom: 0px;
+        color: white;
+    }
+    p{
+      word-break: break-all;
+      color: white;
+    }
+    img{
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+.listcard{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.mycard{
+  width: 350px !important;
+  padding: 10px;
+  .card-title{
+    font-size: 1.5rem;
+    color: rgb(194, 194, 194);
+  }
+  .card-text{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 5px;
+    padding: 30px;  
+    padding-left: 50px;
+    cursor: pointer;
+  }
+}
+
+.cardaction{
+  width: 100%;
+  span{
+    font-size: 1.7rem;
+    display: block;
+    color: #777;
+    font-weight: 600;
+  }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  z-index: 1;
+  position: relative;
+  &-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    z-index: 100000;
+    + div {
+      overflow: hidden;
+    }
+  }
+  &-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    background-color: white;
+    opacity: .8;
+    overflow: hidden;
+
+  }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

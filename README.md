@@ -1,1 +1,1 @@
-mycoinwallet project
+jerry wallet
